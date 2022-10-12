@@ -1,9 +1,11 @@
-import { Donut } from '../Functions/DonutChart.js'
+import { Donut } from '../Functions/Charts/DonutChart.js'
 
 function PortfolioChart() {
     return (
-        <div className='card my-card'>
+        <div className='card my-card portfolio-holdings-chart'>
+            {/* <div className=''> */}
             <Donut />
+            {/* </div> */}
         </div>
     )
 }

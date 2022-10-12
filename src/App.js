@@ -1,34 +1,32 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import { Button, Container } from 'react-bootstrap';
 import './App.css';
-import Header from './Header.js';
-import Footer from './Footer.js';
-import PortfolioBreakdown from './PortfolioViewer/PortfolioBreakdown';
+import Header from './Pages/Home/Header';
+import Footer from './Pages/Home/Footer';
+import Home from './Pages/Home/Home';
+import { Modal } from 'react-modal';
 
 function App() {
 
 
   return (
-    <>
-      <div className='navbar-container'>
+    <Router>
+      <>
+        {/* <div className='navbar-container'> */}
         <Header />
-      </div>
-      <div className="App">
-        <div className='my-body app-card-body'>
-          <div className='row my-row'>
-            <div className='col my-col'>
-              <PortfolioBreakdown />
-            </div>
-            <div className='col card shortcut-card my-col'>
-              123
-            </div>
-          </div>
+        {/* </div> */}
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />}>
+            </Route>
+          </Routes>
         </div >
-      </div >
-      <div>
-        <Footer />
-      </div>
-    </>
+        <div className='footer-container'>
+          <Footer />
+        </div>
+      </>
+    </Router>
   );
 }
 
